@@ -9,8 +9,8 @@ const Header = ({
   setGridType: (gridType: Land) => void;
 }) => {
   return (
-    <HStack my={4} px={4} py={2} justify="space-between">
-      <Heading size="3xl">Explore BC</Heading>
+    <HStack my={4} px={4} py={1} justify="space-between">
+      <Heading size="2xl">Explore BC</Heading>
       <ButtonGroup isAttached>
         <Button
           size="lg"

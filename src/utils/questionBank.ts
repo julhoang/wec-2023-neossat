@@ -5,6 +5,7 @@ import { Land, Question } from "./types";
 export const questionBank: Question[] = [
   {
     question: "What is the largest city in British Columbia (by area)?",
+    id: 1,
     options: [
       { id: 1, text: "Victoria" },
       { id: 2, text: "Kelowna" },
@@ -16,6 +17,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 2,
     question: "How many national parks are there in British Columbia?",
     options: [
       { id: 1, text: "7" },
@@ -28,6 +30,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 3,
     question: "What is the most iconic mammal found in British Columbia?",
     options: [
       { id: 1, text: "Grizzly Bear" },
@@ -40,6 +43,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 4,
     question: "Name of a national park in British Columbia?",
     options: [
       { id: 1, text: "Point Pelee" },
@@ -52,6 +56,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 5,
     question:
       "Which animal is home to the world’s largest concentration in British Columbia coastal temperate rainforest?",
     options: [
@@ -65,6 +70,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 6,
     question: "Which animal is British Columbia home to the largest population of in Canada?",
     options: [
       { id: 1, text: "Grizzly Bear" },
@@ -77,6 +83,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 7,
     question: "Which bird is the official bird of British Columbia?",
     options: [
       { id: 1, text: "Great Blue Heron" },
@@ -89,6 +96,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 8,
     question: "How long is the coastline in BC?",
     options: [
       { id: 1, text: "Under 5,000 km" },
@@ -102,6 +110,7 @@ export const questionBank: Question[] = [
   },
 
   {
+    id: 9,
     question: "British Columbia is home to the world’s largest population of ...",
     options: [
       { id: 1, text: "wild Pacific salmon" },
@@ -114,6 +123,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 10,
     question:
       "... is one of the most biologically productive habitats in the world, and is home to many endangered species.",
     options: [
@@ -127,6 +137,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 11,
     question: "Name the highest mountain in British Columbia",
     options: [
       { id: 1, text: "King Peak" },
@@ -139,6 +150,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 12,
     question: "Which mountain in BC has the highest peak",
     options: [
       { id: 1, text: "Fairweather Mountain" },
@@ -151,6 +163,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 13,
     question: "Which national park has the highest mountain peak in BC?",
     options: [
       { id: 1, text: "Mount Robson Provincial Park" },
@@ -163,6 +176,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 14,
     question: "How many named mountain peaks are there in British Columbia?",
     options: [
       { id: 1, text: "5908" },

@@ -1,6 +1,7 @@
 export type Land = "land" | "water" | "mountain";
 
 export type Question = {
+  id: number,
   question: string;
   options: [
     { id: number; text: string },

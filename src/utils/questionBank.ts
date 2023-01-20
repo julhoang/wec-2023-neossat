@@ -2,6 +2,7 @@ import { Land, Question } from "./types";
 
 export const questionBank: Question[] = [
   {
+    id: 1,
     question: "What is the largest city in British Columbia?",
     options: [
       { id: 1, text: "Victoria" },
@@ -14,6 +15,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 2,
     question: "How many national parks are there in British Columbia?",
     options: [
       { id: 1, text: "7" },
@@ -26,7 +28,9 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
-    question: "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
+    id: 3,
+    question:
+      "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
     options: [
       { id: 1, text: "The Hanging Garden Tree" },
       { id: 2, text: "The Ancient Cedar Tree" },
@@ -38,7 +42,9 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
-    question: "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
+    id: 4,
+    question:
+      "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
     options: [
       { id: 1, text: "The Hanging Garden Tree" },
       { id: 2, text: "The Ancient Cedar Tree" },
@@ -50,6 +56,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 5,
     question: "What is the most iconic mammal found in British Columbia?",
     options: [
       { id: 1, text: "Grizzly Bear" },
@@ -62,7 +69,9 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
-    question: "What is the highest population of endangered Mountain Caribou found in Canada?",
+    id: 6,
+    question:
+      "What is the highest population of endangered Mountain Caribou found in Canada?",
     options: [
       { id: 1, text: "Alberta" },
       { id: 2, text: "Saskatchewan" },
@@ -74,6 +83,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 7,
     question:
       "Which animal is home to the world’s largest concentration in British Columbia coastal temperate rainforest?",
     options: [
@@ -87,7 +97,9 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
-    question: "Which animal is British Columbia home to the largest population of in Canada?",
+    id: 8,
+    question:
+      "Which animal is British Columbia home to the largest population of in Canada?",
     options: [
       { id: 1, text: "Grizzly Bear" },
       { id: 2, text: "Black Bear" },
@@ -99,7 +111,9 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
-    question: "What is the highest population of grizzly bears found in Canada?",
+    id: 9,
+    question:
+      "What is the highest population of grizzly bears found in Canada?",
     options: [
       { id: 1, text: "Alberta" },
       { id: 2, text: "Saskatchewan" },
@@ -111,6 +125,7 @@ export const questionBank: Question[] = [
     done: false,
   },
   {
+    id: 10,
     question: "Which bird is the official bird of British Columbia?",
     options: [
       { id: 1, text: "Great Blue Heron" },

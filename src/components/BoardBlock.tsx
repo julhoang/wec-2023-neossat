@@ -1,6 +1,6 @@
 import { Land } from "@/utils/types";
 import { Center, GridItem, Text } from "@chakra-ui/react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const BoardBlock = ({
   type,
@@ -12,24 +12,96 @@ const BoardBlock = ({
   playerPosition: number;
 }) => {
   const randomColor = useMemo(
-    () => Math.floor(Math.random() * (5 - 4 + 1) + 4) * 100,
+    () => Math.floor(Math.random() * (3 - 2 + 1) + 2) * 100,
     []
   );
+
+  const [emoji, setEmoji] = useState("");
+
+  useEffect(() => {
+    const landEmojis = [
+      "🌳",
+      "🦌",
+      "🌿",
+      "🍃",
+      "🌱",
+      "🍂",
+      "🍁",
+      "🌲",
+      "🌴",
+      "🐻",
+      "🐿️",
+      "🦝",
+      "🦬",
+      "🐴",
+      "🦚",
+      "🪵",
+      "🍀",
+      "🌹",
+      "🌺",
+      "🌸",
+      "🌷",
+      "🌻",
+      "🪷",
+    ];
+    const waterEmojis = [
+      "💦",
+      "🌊",
+      "💧",
+      "🐟",
+      "🐠",
+      "🦀",
+      "🦞",
+      "🐡",
+      "🐳",
+      "🐬",
+      "🐙",
+      "🦑",
+      "🦈",
+      "🛶",
+      "🦐",
+      "🪸",
+      "🏝️",
+      "🦭",
+      "🦢",
+      "🐋",
+      "🚣",
+      "🦩",
+      "🦦",
+      "🏄",
+      "🤿",
+    ];
+    const mountainEmojis = ["🏔", "🌋", "🗻", "🏕"];
+
+    if (type === "water") {
+      setEmoji(waterEmojis[Math.floor(Math.random() * waterEmojis.length)]);
+    } else if (type === "mountain") {
+      setEmoji(
+        mountainEmojis[Math.floor(Math.random() * mountainEmojis.length)]
+      );
+    } else {
+      setEmoji(landEmojis[Math.floor(Math.random() * landEmojis.length)]);
+    }
+  }, [type]);
 
   return (
     <GridItem
       bgColor={
-        type === "land"
+        position === playerPosition
+          ? "red.700"
+          : type === "land"
           ? `green.${randomColor}`
           : type === "water"
           ? `blue.${randomColor}`
           : `gray.${randomColor}`
       }
-      border="1px"
-      borderColor="gray.200"
     >
       <Center w="100%" h="100%">
-        {position === playerPosition && <Text>👨‍🚀</Text>}
+        {position === playerPosition ? (
+          <Text fontSize={"3xl"}>👨‍🚀</Text>
+        ) : (
+          <Text fontSize={"3xl"}>{emoji}</Text>
+        )}
       </Center>
     </GridItem>
   );

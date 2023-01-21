@@ -22,13 +22,7 @@ const GameBoard = ({ gridType }: { gridType: Land }) => {
   }, []);
 
   return (
-    <Grid
-      // templateColumns="repeat(auto-fill, minmax(40px, 1fr))"
-      // templateRows="repeat(auto-fill, minmax(40px, 1fr))"
-      templateColumns="repeat(20, 45px)"
-      templateRows="repeat(20, 45px)"
-    >
-      {/* Loop over 2500 grid items, all with a light gray border */}
+    <Grid templateColumns="repeat(20, 45px)" templateRows="repeat(20, 45px)">
       {Array.from({ length: 400 }).map((_, i) => (
         <BoardBlock
           key={i}

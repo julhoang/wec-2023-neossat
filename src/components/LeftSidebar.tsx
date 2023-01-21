@@ -16,6 +16,9 @@ const LeftSidebar = ({
         size="lg"
         fontSize="2xl"
         bgColor="green.300"
+        _hover={{
+          bgColor: "green.500",
+        }}
         fontWeight={gridType === "land" ? "bold" : "normal"}
         onClick={() => setGridType("land")}
       >
@@ -25,6 +28,9 @@ const LeftSidebar = ({
         size="lg"
         fontSize="2xl"
         bgColor="blue.200"
+        _hover={{
+          bgColor: "blue.400",
+        }}
         fontWeight={gridType === "water" ? "bold" : "normal"}
         onClick={() => setGridType("water")}
       >
@@ -34,6 +40,9 @@ const LeftSidebar = ({
         size="lg"
         fontSize="2xl"
         bgColor="gray.400"
+        _hover={{
+          bgColor: "gray.600",
+        }}
         fontWeight={gridType === "mountain" ? "bold" : "normal"}
         onClick={() => setGridType("mountain")}
       >

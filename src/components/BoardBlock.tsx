@@ -71,7 +71,23 @@ const BoardBlock = ({
       "🏄",
       "🤿",
     ];
-    const mountainEmojis = ["🏔", "🌋", "🗻", "🏕"];
+    const mountainEmojis = [
+      "🦅",
+      "🦆",
+      "🦉",
+      "❄️",
+      "⛷️",
+      "🗻",
+      "☃️",
+      "🏂",
+      "🌨️",
+      "🏔️",
+      "🌋",
+      "⛰️",
+      "🚵",
+      "🧗",
+      "🪨",
+    ];
 
     if (type === "water") {
       setEmoji(waterEmojis[Math.floor(Math.random() * waterEmojis.length)]);

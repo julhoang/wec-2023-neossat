@@ -1,7 +1,7 @@
 export type Land = "land" | "water" | "mountain";
 
 export type Question = {
-  id: number,
+  id: number;
   question: string;
   options: [
     { id: number; text: string },
@@ -12,4 +12,5 @@ export type Question = {
   correct: number;
   theme: Land;
   done: boolean;
+  knowledge: string;
 };

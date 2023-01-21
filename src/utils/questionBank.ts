@@ -15,6 +15,7 @@ export const questionBank: Question[] = [
     correct: 4,
     theme: "land",
     done: false,
+    knowledge: "Abbotsford is the largest city in British Columbia by area.",
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
+    knowledge: "There are 7 national parks in British Columbia.",
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
+    knowledge: "The Grizzly Bear is the most iconic mammal found in British Columbia.",
   },
   {
     id: 4,
@@ -54,11 +57,12 @@ export const questionBank: Question[] = [
     correct: 2,
     theme: "land",
     done: false,
+    knowledge:
+      "Yoho National Park is a national park located in the Rocky Mountains of British Columbia, Canada.",
   },
   {
     id: 5,
-    question:
-      "Which animal is home to the world’s largest concentration in British Columbia coastal temperate rainforest?",
+    question: "Which birds in the list has the largest concentration in British Columbia?",
     options: [
       { id: 1, text: "Bald Eagles" },
       { id: 2, text: "Grizzly Bears" },
@@ -68,6 +72,7 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
+    knowledge: "Bald Eagles are the largest concentration of animals in British Columbia.",
   },
   {
     id: 6,
@@ -81,12 +86,13 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
+    knowledge: "Grizzly Bear is the largest population of animals in British Columbia.",
   },
   {
     id: 7,
     question: "Which bird is the official bird of British Columbia?",
     options: [
-      { id: 1, text: "Great Blue Heron" },
+      { id: 1, text: "Steller's Jay" },
       { id: 2, text: "Trumpeter Swan" },
       { id: 3, text: "Bald Eagle" },
       { id: 4, text: "Canada Goose" },
@@ -94,6 +100,7 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
+    knowledge: "Steller's Jay is the official bird of British Columbia.",
   },
   {
     id: 8,
@@ -107,6 +114,7 @@ export const questionBank: Question[] = [
     correct: 4,
     theme: "water",
     done: false,
+    knowledge: "The coastline in BC is over 24,000 km.",
   },
 
   {
@@ -121,6 +129,7 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "water",
     done: false,
+    knowledge: "British Columbia is home to the world’s largest population of wild Pacific salmon.",
   },
   {
     id: 10,
@@ -135,6 +144,8 @@ export const questionBank: Question[] = [
     correct: 3,
     theme: "land",
     done: false,
+    knowledge:
+      "Georgia Strait is one of the most biologically productive habitats in the world, and is home to many endangered species.",
   },
   {
     id: 11,
@@ -148,6 +159,7 @@ export const questionBank: Question[] = [
     correct: 3,
     theme: "mountain",
     done: false,
+    knowledge: "Mount Logan is the highest mountain in British Columbia.",
   },
   {
     id: 12,
@@ -161,6 +173,7 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "mountain",
     done: false,
+    knowledge: "Fairweather Mountain has the highest peak in BC.",
   },
   {
     id: 13,
@@ -174,6 +187,7 @@ export const questionBank: Question[] = [
     correct: 2,
     theme: "mountain",
     done: false,
+    knowledge: "Glacier Bay National Park and Preserve has the highest mountain peak in BC.",
   },
   {
     id: 14,
@@ -187,5 +201,6 @@ export const questionBank: Question[] = [
     correct: 3,
     theme: "mountain",
     done: false,
+    knowledge: "There are 7996 named mountain peaks in British Columbia.",
   },
 ];

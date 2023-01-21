@@ -1,13 +1,20 @@
+import {
+  targetLandEmojis,
+  targetMountainEmojis,
+  targetWaterEmojis,
+} from "@/utils/constants";
 import { Land } from "@/utils/types";
-import { VStack, Heading, Progress, Button, Box } from "@chakra-ui/react";
+import { VStack, Heading, Progress, Button, Box, grid } from "@chakra-ui/react";
 import Timer from "./Timer";
 
 const LeftSidebar = ({
   gridType,
   setGridType,
+  foundEmojis,
 }: {
   gridType: Land;
   setGridType: (gridType: Land) => void;
+  foundEmojis: string[];
 }) => {
   return (
     <VStack minW="300px" p={4} align="self-start">
@@ -48,6 +55,15 @@ const LeftSidebar = ({
       >
         Mountain
       </Button>
+      <Heading>Target Emojis</Heading>
+      <Heading>
+        {gridType === "land" &&
+          targetLandEmojis.filter((emoji) => !foundEmojis.includes(emoji))}
+        {gridType === "water" &&
+          targetWaterEmojis.filter((emoji) => !foundEmojis.includes(emoji))}
+        {gridType === "mountain" &&
+          targetMountainEmojis.filter((emoji) => !foundEmojis.includes(emoji))}
+      </Heading>
     </VStack>
   );
 };

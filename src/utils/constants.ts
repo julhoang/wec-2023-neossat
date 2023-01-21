@@ -61,9 +61,9 @@ export const mountainEmojis = [
   "🗻",
   "☃️",
   "🏂",
-  "🌨️",
-  "🦉",
+  "🪱",
   "🏔️",
+  "🦉",
   "🌋",
   "⛰️",
   "🚵",
@@ -71,4 +71,4 @@ export const mountainEmojis = [
   "🪨",
 ];
 
-export const targetMountainEmojis = ["🦅", "🪱"];
+export const targetMountainEmojis = ["🦅", "🌨️"];

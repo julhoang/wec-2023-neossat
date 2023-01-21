@@ -1,12 +1,11 @@
-import QuestionCard from "../components/QuestionCard";
 import { questionBank } from "../utils/questionBank";
-import { Box, Button, Heading } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { Question } from "@/utils/types";
 import { useEffect, useState } from "react";
-import { HStack, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import QuizQuestions from "@/components/QuizQuestions";
-import Head from "next/head";
 import QuestionDisplay from "@/components/QuestionDisplay";
+import QuizButtons from "@/components/QuizButtons";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -86,6 +85,7 @@ const Quiz = () => {
   return (
     <VStack p={8} spacing={8}>
       <Heading fontSize="5xl">ExploreBC Quiz</Heading>
+      <QuizButtons quizDone={quizDone} />
       {quizDone ? (
         <VStack>
           <Heading>Quiz Done!</Heading>

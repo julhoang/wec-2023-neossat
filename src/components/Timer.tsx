@@ -2,16 +2,18 @@ import { Box, Center, Heading } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const Timer = () => {
-  // 3 minute timer shown in format MM:SS
-  const [time, setTime] = useState(180);
+const Timer = ({ foundEmojis }: { foundEmojis: string[] }) => {
+  const [time, setTime] = useState(120);
 
   const router = useRouter();
 
   useEffect(() => {
     const timer = setInterval(() => {
       if (time === 0) {
-        router.push("/results");
+        router.push({
+          pathname: "/results",
+          query: { foundEmojis: foundEmojis ? foundEmojis.join(",") : "" },
+        });
       }
       setTime(time - 1);
     }, 1000);

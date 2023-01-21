@@ -18,7 +18,7 @@ const LeftSidebar = ({
 }) => {
   return (
     <VStack minW="300px" p={4} spacing={5}>
-      <Timer />
+      <Timer foundEmojis={foundEmojis} />
       <Heading>Places</Heading>
       <VStack w="100%" align="stretch">
         <Button

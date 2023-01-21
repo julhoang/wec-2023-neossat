@@ -3,6 +3,7 @@ import { Center, GridItem, Text } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
 import { BoardEmojis } from "@/utils/types";
 import { landEmojis, mountainEmojis, waterEmojis } from "@/utils/constants";
+import { useRouter } from "next/router";
 
 const BoardBlock = ({
   type,
@@ -45,6 +46,17 @@ const BoardBlock = ({
       }
     }
   }, [playerPosition]);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (foundEmojis.length === 6) {
+      router.push({
+        pathname: "/results",
+        query: { foundEmojis: foundEmojis.join(",") },
+      });
+    }
+  }, [foundEmojis]);
 
   return (
     <GridItem

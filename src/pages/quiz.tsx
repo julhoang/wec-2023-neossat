@@ -1,14 +1,22 @@
 import QuestionCard from "../components/QuestionCard";
 import { Head, Main } from "next/document";
 import { questionBank } from "../utils/questionBank";
-import { Box, Button, Card, CardBody, CardHeader } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  StackDivider,
+} from "@chakra-ui/react";
 import { Question } from "@/utils/types";
 import { useState } from "react";
+import { Stack, HStack, VStack } from "@chakra-ui/react";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState<number[]>([]);
-
+  const [score, setScore] = useState(0);
   const [showSubmit, setShowSubmit] = useState(false);
 
   function prevQuestion(currentQuestion: number) {
@@ -26,7 +34,6 @@ const Quiz = () => {
   }
 
   function submitQuiz() {
-    setCurrentQuestion(0);
     if (selectedOptions.length < 9) {
       alert("Please answer all questions");
     } else {
@@ -35,36 +42,21 @@ const Quiz = () => {
   }
 
   return (
-    <>
+    <VStack spacing={10} w="50%" my={40}>
       {currentQuestion < 10 && (
-        <Box w="80%">
-          <Card
-            direction={{ base: "column", sm: "row" }}
-            overflow="hidden"
-            variant="outline"
-          >
-            <CardHeader>{questionBank[currentQuestion].question}</CardHeader>
-            <CardBody>
-              {questionBank[currentQuestion].options.map((option) => {
-                return (
-                  <Button
-                    key={option.id}
-                    onClick={() => {
-                      selectOption(option.id, questionBank[currentQuestion].id);
-                      console.log(selectedOptions);
-                    }}
-                  >
-                    {option.text}
-                  </Button>
-                );
-              })}
-            </CardBody>
-          </Card>
-        </Box>
+        <>
+          <Box w="80%">
+            <QuestionCard
+              cardData={questionBank[currentQuestion]}
+              selectOption={selectOption}
+              currentQuestion={currentQuestion}
+            />
+          </Box>
+        </>
       )}
 
-      {currentQuestion > 0 && (
-        <>
+      <HStack spacing="4">
+        {currentQuestion > 0 && (
           <Button
             onClick={() => {
               prevQuestion(currentQuestion);
@@ -72,11 +64,9 @@ const Quiz = () => {
           >
             Previous
           </Button>
-        </>
-      )}
+        )}
 
-      {currentQuestion < 10 ? (
-        <>
+        {currentQuestion < 9 ? (
           <Button
             onClick={() => {
               nextQuestion(currentQuestion);
@@ -84,10 +74,7 @@ const Quiz = () => {
           >
             Next
           </Button>
-        </>
-      ) : (
-        <>
-          {/* {selectedOptions.length==9 && ()} */}
+        ) : (
           <Button
             onClick={() => {
               submitQuiz();
@@ -95,9 +82,9 @@ const Quiz = () => {
           >
             Submit
           </Button>
-        </>
-      )}
-    </>
+        )}
+      </HStack>
+    </VStack>
   );
 };
 

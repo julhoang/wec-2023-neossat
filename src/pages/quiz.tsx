@@ -1,11 +1,9 @@
-import QuestionCard from "../components/QuestionCard";
 import { questionBank } from "../utils/questionBank";
-import { Box, Button, Heading } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { Question } from "@/utils/types";
 import { useEffect, useState } from "react";
-import { HStack, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import QuizQuestions from "@/components/QuizQuestions";
-import Head from "next/head";
 import QuestionDisplay from "@/components/QuestionDisplay";
 
 const Quiz = () => {

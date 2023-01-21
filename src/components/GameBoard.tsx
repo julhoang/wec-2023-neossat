@@ -1,8 +1,7 @@
 import { Land } from "@/utils/types";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
 import BoardBlock from "./BoardBlock";
-import { BoardEmojis } from "@/utils/types";
 import {
   targetLandEmojis,
   targetMountainEmojis,

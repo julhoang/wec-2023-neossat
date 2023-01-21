@@ -1,28 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
 import {
-  Box,
   Button,
-  ButtonGroup,
   Center,
-  Divider,
-  Grid,
-  GridItem,
   Heading,
-  HStack,
-  Progress,
   useDisclosure,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { Land } from "@/utils/types";
-import Header from "@/components/Header";
-import LeftSidebar from "@/components/LeftSidebar";
-import GameBoard from "@/components/GameBoard";
-import RightSidebar from "@/components/RightSidebar";
 import Link from "next/link";
 import {
   Modal,
@@ -69,9 +54,9 @@ export default function Home() {
                   <Text fontWeight="bold" mt="1rem" mb="0.5rem">
                     Overview
                   </Text>
-                  The aim is to find the items in the grid by moving the
-                  player to learn cool facts about the nature and wildlife of
-                  British Columbia.
+                  The aim is to find the items in the grid by moving the player
+                  to learn cool facts about the nature and wildlife of British
+                  Columbia.
                 </Text>
                 <Text>
                   <Text fontWeight="bold" mt="1rem" mb="0.5rem">
@@ -83,14 +68,14 @@ export default function Home() {
                   <b>Sea, Land and the Sky.</b>
                 </Text>
                 <Text>
-                  Once you find an item, a new fact is added to the
-                  knowledge bank to help to learn more about the habitat.
+                  Once you find an item, a new fact is added to the knowledge
+                  bank to help to learn more about the habitat.
                 </Text>
                 <Text>
-                  After you have learned about the facts through the game, you can complete a quiz to test your knowledge.
+                  After you have learned about the facts through the game, you
+                  can complete a quiz to test your knowledge.
                 </Text>
               </ModalBody>
-
               <ModalFooter>
                 <Button colorScheme="blue" mr={3} onClick={onClose}>
                   Close

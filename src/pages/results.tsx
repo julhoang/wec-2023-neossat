@@ -28,8 +28,8 @@ const Results = () => {
         <Heading size="2xl">You're done!</Heading>
         <Heading size="xl">
           {obj
-            ? `You found ${obj.length} out of 6 emojis!`
-            : "You found no emojis in time 😢"}
+            ? `Score: ${obj.length} out of 6 emojis!`
+            : "You found no emojis in time 😢 you got a score of 0"}
         </Heading>
         {obj && <Heading size="xl">You found: {obj}</Heading>}
         {obj && obj.length < 6 && (

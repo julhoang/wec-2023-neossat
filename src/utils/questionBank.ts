@@ -1,7 +1,5 @@
 import { Land, Question } from "./types";
 
-// Current question count: 14
-
 export const questionBank: Question[] = [
   {
     id: 0,
@@ -16,6 +14,7 @@ export const questionBank: Question[] = [
     theme: "land",
     done: false,
     knowledge: "Abbotsford is the largest city in British Columbia by area.",
+    wrongAnswerCount: 0,
   },
   {
     id: 1,
@@ -30,11 +29,11 @@ export const questionBank: Question[] = [
     theme: "land",
     done: false,
     knowledge: "There are 7 national parks in British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 2,
-    question:
-      "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
+    question: "Which animal below is the most iconic in British Columbia?",
     options: [
       { id: 1, text: "Grizzly Bear" },
       { id: 2, text: "Black Bear" },
@@ -46,11 +45,11 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "The Grizzly Bear is the most iconic mammal found in British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 3,
-    question:
-      "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
+    question: "Which one of these national parks is in British Columbia?",
     options: [
       { id: 1, text: "Point Pelee" },
       { id: 2, text: "Yoho" },
@@ -62,6 +61,7 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "Yoho National Park is a national park located in the Rocky Mountains of British Columbia, Canada.",
+    wrongAnswerCount: 0,
   },
   {
     id: 4,
@@ -69,15 +69,16 @@ export const questionBank: Question[] = [
       "Which birds in the list has the largest concentration in British Columbia?",
     options: [
       { id: 1, text: "Bald Eagles" },
-      { id: 2, text: "Grizzly Bears" },
-      { id: 3, text: "Roosevelt Elk" },
+      { id: 2, text: "Northern Spotted Owl" },
+      { id: 3, text: "Great Blue Heron" },
       { id: 4, text: "Pileated Woodpecker" },
     ],
     correct: 1,
-    theme: "land",
+    theme: "mountain",
     done: false,
     knowledge:
       "Bald Eagles are the largest concentration of animals in British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 5,
@@ -94,6 +95,7 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "Grizzly Bear is the largest population of animals in British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 6,
@@ -109,6 +111,7 @@ export const questionBank: Question[] = [
     theme: "land",
     done: false,
     knowledge: "Steller's Jay is the official bird of British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 7,
@@ -124,12 +127,13 @@ export const questionBank: Question[] = [
     theme: "water",
     done: false,
     knowledge: "The coastline in BC is over 24,000 km.",
+    wrongAnswerCount: 0,
   },
 
   {
     id: 8,
     question:
-      "British Columbia is home to the world’s largest population of ...",
+      "British Columbia is home to the world’s largest population of _________",
     options: [
       { id: 1, text: "wild Pacific salmon" },
       { id: 2, text: "Bull Trout" },
@@ -141,6 +145,7 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "British Columbia is home to the world’s largest population of wild Pacific salmon.",
+    wrongAnswerCount: 0,
   },
   {
     id: 9,
@@ -157,7 +162,9 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "Georgia Strait is one of the most biologically productive habitats in the world, and is home to many endangered species.",
+    wrongAnswerCount: 0,
   },
+
   {
     id: 10,
     question: "Which bird is the official bird of British Columbia?",
@@ -171,6 +178,7 @@ export const questionBank: Question[] = [
     theme: "mountain",
     done: false,
     knowledge: "Mount Logan is the highest mountain in British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 11,
@@ -185,6 +193,7 @@ export const questionBank: Question[] = [
     theme: "mountain",
     done: false,
     knowledge: "Fairweather Mountain has the highest peak in BC.",
+    wrongAnswerCount: 0,
   },
   {
     id: 12,
@@ -200,6 +209,7 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "Glacier Bay National Park and Preserve has the highest mountain peak in BC.",
+    wrongAnswerCount: 0,
   },
   {
     id: 13,
@@ -214,6 +224,7 @@ export const questionBank: Question[] = [
     theme: "mountain",
     done: false,
     knowledge: "There are 7996 named mountain peaks in British Columbia.",
+    wrongAnswerCount: 0,
   },
   {
     id: 14,
@@ -229,5 +240,187 @@ export const questionBank: Question[] = [
     done: false,
     knowledge:
       "There are over 7,500 species of marine life in British Columbia.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 15,
+    question: "How many species of marine life are there in British Columbia?",
+    options: [
+      { id: 1, text: "Less than 5000" },
+      { id: 2, text: "About 5,000" },
+      { id: 3, text: "Over 7,500" },
+      { id: 4, text: "Over 10,000" },
+    ],
+    correct: 3,
+    theme: "water",
+    done: false,
+    knowledge:
+      "There are over 7,500 species of marine life in British Columbia.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 16,
+    question:
+      "The coastal temperate rainforest of British Columbia is home to the world’s largest concentration of ___________",
+    options: [
+      { id: 1, text: "Hawks" },
+      { id: 2, text: "Bald Eagles" },
+      { id: 3, text: "Great Blue Heron" },
+      { id: 4, text: "Pileated Woodpecker." },
+    ],
+    correct: 2,
+    theme: "mountain",
+    done: false,
+    knowledge:
+      "The coastal temperate rainforest of British Columbia is home to the world’s largest concentration of Bald Eagles.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 17,
+    question:
+      "The coastal temperate rainforest of British Columbia is home to the world’s largest concentration of _________",
+    options: [
+      { id: 1, text: "Hawks" },
+      { id: 2, text: "Bald Eagles" },
+      { id: 3, text: "Great Blue Heron" },
+      { id: 4, text: "Pileated Woodpecker." },
+    ],
+    correct: 2,
+    theme: "mountain",
+    done: false,
+    knowledge:
+      "The coastal temperate rainforest of British Columbia is home to the world’s largest concentration of Bald Eagles.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 18,
+    question: "What the approximate population of wild salmon in BC?",
+    options: [
+      { id: 1, text: "Under 1 millions" },
+      { id: 2, text: "1 - around 10 millions" },
+      { id: 3, text: "11 - around 18 millions" },
+      { id: 4, text: "Over 19 millions" },
+    ],
+    correct: 4,
+    theme: "water",
+    done: false,
+    knowledge: "There are over 19 millions of wild salmon in BC.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 19,
+    question: "British Columbia is home to the world’s largest ______",
+    options: [
+      { id: 1, text: "kelp" },
+      { id: 2, text: "coral reef" },
+      { id: 3, text: "Pacific Salmon" },
+      { id: 4, text: "Gray Whale" },
+    ],
+    correct: 1,
+    theme: "water",
+    done: false,
+    knowledge: "British Columbia is home to the world’s largest kelp forest.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 20,
+    question:
+      "There are over 30,000 _____ off the coast of British Columbia, with the majority of them situated in the Inside Passage. ",
+    options: [
+      { id: 1, text: "mountain peaks" },
+      { id: 2, text: "coral reef" },
+      { id: 3, text: "islands" },
+      { id: 4, text: "Gray Whale" },
+    ],
+    correct: 3,
+    theme: "water",
+    done: false,
+    knowledge:
+      "There are over 30,000 islands off the coast of British Columbia, with the majority of them situated in the Inside Passage.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 21,
+    question:
+      "There are over 30,000 _____ off the coast of British Columbia, with the majority of them situated in the Inside Passage. ",
+    options: [
+      { id: 1, text: "mountain peaks" },
+      { id: 2, text: "coral reef" },
+      { id: 3, text: "islands" },
+      { id: 4, text: "Gray Whale" },
+    ],
+    correct: 3,
+    theme: "water",
+    done: false,
+    knowledge:
+      "There are over 30,000 islands off the coast of British Columbia, with the majority of them situated in the Inside Passage.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 22,
+    question:
+      "About ___ of electricity in B.C. is produced from hydroelectric sources.",
+    options: [
+      { id: 1, text: "around 30%" },
+      { id: 2, text: "around 50%" },
+      { id: 3, text: "around 70%" },
+      { id: 4, text: "around 90%" },
+    ],
+    correct: 4,
+    theme: "water",
+    done: false,
+    knowledge:
+      "About 87% of electricity in B.C. is produced from hydroelectric sources.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 23,
+    question:
+      "About ___ of electricity in B.C. is produced from hydroelectric sources.",
+    options: [
+      { id: 1, text: "around 30%" },
+      { id: 2, text: "around 50%" },
+      { id: 3, text: "around 70%" },
+      { id: 4, text: "around 90%" },
+    ],
+    correct: 4,
+    theme: "water",
+    done: false,
+    knowledge:
+      "About 87% of electricity in B.C. is produced from hydroelectric sources.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 24,
+    question:
+      "British Columbia is one of the top 3 producing regions of _______ in the world.",
+    options: [
+      { id: 1, text: "cranberries and blueberries" },
+      { id: 2, text: "tomatoes" },
+      { id: 3, text: "apples" },
+      { id: 4, text: "grapes" },
+    ],
+    correct: 1,
+    theme: "land",
+    done: false,
+    knowledge:
+      "British Columbia is one of the top 3 producing regions of cranberries and blueberries in the world.",
+    wrongAnswerCount: 0,
+  },
+  {
+    id: 25,
+    question:
+      "BC’s capital city Victoria, located on Vancouver Island, has an annual flower count at the end of the winter. Each year the community gets together to count more than _______ blooms.",
+    options: [
+      { id: 1, text: "less than 100,000 millions" },
+      { id: 2, text: "around 100,000 millions" },
+      { id: 3, text: "around 500,000 millions" },
+      { id: 4, text: "more than 1 billion" },
+    ],
+    correct: 4,
+    theme: "land",
+    done: false,
+    knowledge: "Each year Victoria count more than 1 billion flower blooms.",
+    wrongAnswerCount: 0,
   },
 ];

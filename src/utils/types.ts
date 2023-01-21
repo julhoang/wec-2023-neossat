@@ -13,6 +13,7 @@ export type Question = {
   theme: Land;
   done: boolean;
   knowledge: string;
+  wrongAnswerCount: number;
 };
 
 export type BoardEmojis = {

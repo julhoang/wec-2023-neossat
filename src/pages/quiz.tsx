@@ -6,6 +6,7 @@ import { VStack } from "@chakra-ui/react";
 import QuizQuestions from "@/components/QuizQuestions";
 import QuestionDisplay from "@/components/QuestionDisplay";
 import QuizButtons from "@/components/QuizButtons";
+import Head from "next/head";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -14,10 +15,10 @@ const Quiz = () => {
   }>({});
   const [questionList, setQuestionList] = useState<Question[]>([]);
   const [quizDone, setQuizDone] = useState(false);
+  let allQuestions: Question[] = [];
 
   useEffect(() => {
     const obj = localStorage.getItem("explore-bc-questions");
-    let allQuestions: Question[] = [];
 
     if (obj) {
       const items = JSON.parse(obj) as Question[];
@@ -82,6 +83,13 @@ const Quiz = () => {
     setCorrectQs(correct);
   };
 
+  // Get the question with highest wrongAnswerCount
+  const mostWrongAnswers = questionList.reduce(
+    (prev, current) =>
+      prev.wrongAnswerCount > current.wrongAnswerCount ? prev : current,
+    questionList[0]
+  );
+
   return (
     <VStack p={8} spacing={8}>
       <Heading fontSize="5xl">ExploreBC Quiz</Heading>
@@ -90,6 +98,15 @@ const Quiz = () => {
         <VStack>
           <Heading>Quiz Done!</Heading>
           <Heading>You got {correctQs} out of 10 questions correct</Heading>
+          <Box px={12} py={2}>
+            <Heading>
+              {`The question with most wrong answers was ${
+                mostWrongAnswers?.question
+              } and the correct answer is ${
+                mostWrongAnswers?.options[mostWrongAnswers?.correct].text
+              }`}
+            </Heading>
+          </Box>
           {questionList.map((question, index) => (
             <Box w="80%">
               <QuestionDisplay

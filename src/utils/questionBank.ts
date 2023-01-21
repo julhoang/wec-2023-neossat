@@ -4,8 +4,8 @@ import { Land, Question } from "./types";
 
 export const questionBank: Question[] = [
   {
-    question: "What is the largest city in British Columbia (by area)?",
-    id: 1,
+    id: 0,
+    question: "What is the largest city in British Columbia?",
     options: [
       { id: 1, text: "Victoria" },
       { id: 2, text: "Kelowna" },
@@ -18,7 +18,7 @@ export const questionBank: Question[] = [
     knowledge: "Abbotsford is the largest city in British Columbia by area.",
   },
   {
-    id: 2,
+    id: 1,
     question: "How many national parks are there in British Columbia?",
     options: [
       { id: 1, text: "7" },
@@ -32,8 +32,8 @@ export const questionBank: Question[] = [
     knowledge: "There are 7 national parks in British Columbia.",
   },
   {
-    id: 3,
-    question: "What is the most iconic mammal found in British Columbia?",
+    id: 2,
+    question: "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
     options: [
       { id: 1, text: "Grizzly Bear" },
       { id: 2, text: "Black Bear" },
@@ -46,8 +46,8 @@ export const questionBank: Question[] = [
     knowledge: "The Grizzly Bear is the most iconic mammal found in British Columbia.",
   },
   {
-    id: 4,
-    question: "Name of a national park in British Columbia?",
+    id: 3,
+    question: "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
     options: [
       { id: 1, text: "Point Pelee" },
       { id: 2, text: "Yoho" },
@@ -75,8 +75,8 @@ export const questionBank: Question[] = [
     knowledge: "Bald Eagles are the largest concentration of animals in British Columbia.",
   },
   {
-    id: 6,
-    question: "Which animal is British Columbia home to the largest population of in Canada?",
+    id: 5,
+    question: "What is the highest population of endangered Mountain Caribou found in Canada?",
     options: [
       { id: 1, text: "Grizzly Bear" },
       { id: 2, text: "Black Bear" },
@@ -89,8 +89,9 @@ export const questionBank: Question[] = [
     knowledge: "Grizzly Bear is the largest population of animals in British Columbia.",
   },
   {
-    id: 7,
-    question: "Which bird is the official bird of British Columbia?",
+    id: 6,
+    question:
+      "Which animal is home to the world’s largest concentration in British Columbia coastal temperate rainforest?",
     options: [
       { id: 1, text: "Steller's Jay" },
       { id: 2, text: "Trumpeter Swan" },
@@ -103,8 +104,8 @@ export const questionBank: Question[] = [
     knowledge: "Steller's Jay is the official bird of British Columbia.",
   },
   {
-    id: 8,
-    question: "How long is the coastline in BC?",
+    id: 7,
+    question: "Which animal is British Columbia home to the largest population of in Canada?",
     options: [
       { id: 1, text: "Under 5,000 km" },
       { id: 2, text: "5,000 - 12,000 km" },
@@ -148,8 +149,8 @@ export const questionBank: Question[] = [
       "Georgia Strait is one of the most biologically productive habitats in the world, and is home to many endangered species.",
   },
   {
-    id: 11,
-    question: "Name the highest mountain in British Columbia",
+    id: 9,
+    question: "Which bird is the official bird of British Columbia?",
     options: [
       { id: 1, text: "King Peak" },
       { id: 2, text: "Mount Saint Elias" },

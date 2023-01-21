@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const Timer = () => {
-  // 5 minute timer shown in format MM:SS
-  const [time, setTime] = useState(500);
+  // 3 minute timer shown in format MM:SS
+  const [time, setTime] = useState(180);
 
   const router = useRouter();
 

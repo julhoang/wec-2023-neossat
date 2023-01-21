@@ -90,8 +90,7 @@ export const questionBank: Question[] = [
   },
   {
     id: 6,
-    question:
-      "Which animal is home to the world’s largest concentration in British Columbia coastal temperate rainforest?",
+    question: "Which animal is home to the world’s largest concentration in British Columbia?",
     options: [
       { id: 1, text: "Steller's Jay" },
       { id: 2, text: "Trumpeter Swan" },
@@ -203,5 +202,19 @@ export const questionBank: Question[] = [
     theme: "mountain",
     done: false,
     knowledge: "There are 7996 named mountain peaks in British Columbia.",
+  },
+  {
+    id: 15,
+    question: "How many species of marine life are there in British Columbia?",
+    options: [
+      { id: 1, text: "Less than 5000" },
+      { id: 2, text: "About 5,000" },
+      { id: 3, text: "Over 7,500" },
+      { id: 4, text: "Over 10,000" },
+    ],
+    correct: 3,
+    theme: "water",
+    done: false,
+    knowledge: "There are over 7,500 species of marine life in British Columbia.",
   },
 ];

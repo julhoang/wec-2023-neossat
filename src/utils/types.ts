@@ -14,3 +14,9 @@ export type Question = {
   done: boolean;
   knowledge: string;
 };
+
+export type BoardEmojis = {
+  waterEmojis: string[];
+  landEmojis: string[];
+  mountainEmojis: string[];
+};

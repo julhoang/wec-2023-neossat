@@ -31,9 +31,3 @@ Start the development server
 ```
 
 It should be running on [http://localhost:3000](http://localhost:3000)
-
-# Authors
-
-Eduardo Szeckir
-Nishchint Dawan
-Julia Hoang

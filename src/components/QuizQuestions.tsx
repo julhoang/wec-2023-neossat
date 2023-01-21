@@ -9,6 +9,7 @@ const QuizQuestions = ({
   nextQuestion,
   prevQuestion,
   questionList,
+  onSubmit,
 }: {
   currentQuestion: number;
   selectedOptions: { [key: number]: number };
@@ -16,6 +17,7 @@ const QuizQuestions = ({
   nextQuestion: () => void;
   prevQuestion: () => void;
   questionList: Question[];
+  onSubmit: () => void;
 }) => {
   return (
     <VStack spacing={8}>
@@ -45,7 +47,7 @@ const QuizQuestions = ({
             Next
           </Button>
         ) : (
-          <Button fontSize="2xl" onClick={() => {}} py={8}>
+          <Button fontSize="2xl" onClick={onSubmit} py={8}>
             Submit
           </Button>
         )}

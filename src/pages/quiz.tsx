@@ -5,6 +5,8 @@ import { Question } from "@/utils/types";
 import { useEffect, useState } from "react";
 import { HStack, VStack } from "@chakra-ui/react";
 import QuizQuestions from "@/components/QuizQuestions";
+import Head from "next/head";
+import QuestionDisplay from "@/components/QuestionDisplay";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -66,11 +68,38 @@ const Quiz = () => {
     setSelectedOptions({ ...selectedOptions, [question]: answer });
   };
 
+  const [correctQs, setCorrectQs] = useState(0);
+
+  const onSubmit = () => {
+    setQuizDone(true);
+
+    let correct = 0;
+    questionList.forEach((question, index) => {
+      if (question.correct === selectedOptions[index]) {
+        correct++;
+      }
+    });
+
+    setCorrectQs(correct);
+  };
+
   return (
     <VStack p={8} spacing={8}>
       <Heading fontSize="5xl">ExploreBC Quiz</Heading>
       {quizDone ? (
-        <Heading>Quiz Done</Heading>
+        <VStack>
+          <Heading>Quiz Done!</Heading>
+          <Heading>You got {correctQs} out of 10 questions correct</Heading>
+          {questionList.map((question, index) => (
+            <Box w="80%">
+              <QuestionDisplay
+                index={index}
+                question={question}
+                selectedAnswer={selectedOptions[index]}
+              />
+            </Box>
+          ))}
+        </VStack>
       ) : (
         <Box w="80%">
           <QuizQuestions
@@ -80,6 +109,7 @@ const Quiz = () => {
             nextQuestion={nextQuestion}
             prevQuestion={prevQuestion}
             questionList={questionList}
+            onSubmit={onSubmit}
           />
         </Box>
       )}

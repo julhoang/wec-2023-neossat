@@ -34,9 +34,7 @@ const QuestionCard = ({
             return (
               <Button
                 key={option.id}
-                onClick={() => {
-                  selectOption(cardData.id, option.id);
-                }}
+                onClick={() => selectOption(cardData.id, option.id)}
                 isActive={selectedAnswer === option.id}
                 py={8}
                 _active={{

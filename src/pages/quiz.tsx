@@ -98,13 +98,12 @@ const Quiz = () => {
         <VStack>
           <Heading>Quiz Done!</Heading>
           <Heading>You got {correctQs} out of 10 questions correct</Heading>
-          <Box px={12} py={2}>
-            <Heading>
-              {`The question with most wrong answers was ${
-                mostWrongAnswers?.question
-              } and the correct answer is ${
-                mostWrongAnswers?.options[mostWrongAnswers?.correct].text
-              }`}
+          <Box py={2} w="80%">
+            <Heading>The question with most wrong answers was</Heading>
+            <Heading color="blue.500">{mostWrongAnswers?.question}</Heading>
+            <Heading>and the correct answer is</Heading>
+            <Heading color="blue.500">
+              {mostWrongAnswers?.options[mostWrongAnswers?.correct].text}
             </Heading>
           </Box>
           {questionList.map((question, index) => (

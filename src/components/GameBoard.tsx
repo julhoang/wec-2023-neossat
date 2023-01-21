@@ -2,8 +2,9 @@ import { Land } from "@/utils/types";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import BoardBlock from "./BoardBlock";
+import { BoardEmojis } from "@/utils/types";
 
-const GameBoard = ({ gridType }: { gridType: Land }) => {
+const GameBoard = ({ gridType, boardEmojis }: { gridType: Land; boardEmojis: BoardEmojis }) => {
   const [playerPosition, setPlayerPosition] = useState(210);
 
   useEffect(() => {
@@ -23,18 +24,16 @@ const GameBoard = ({ gridType }: { gridType: Land }) => {
 
   return (
     <Grid
-      // templateColumns="repeat(auto-fill, minmax(40px, 1fr))"
-      // templateRows="repeat(auto-fill, minmax(40px, 1fr))"
       templateColumns="repeat(20, 45px)"
       templateRows="repeat(20, 45px)"
     >
-      {/* Loop over 2500 grid items, all with a light gray border */}
       {Array.from({ length: 400 }).map((_, i) => (
         <BoardBlock
           key={i}
           type={gridType}
           position={i}
           playerPosition={playerPosition}
+          boardEmojis={boardEmojis}
         />
       ))}
     </Grid>

@@ -17,29 +17,29 @@ const KnowledgeCard = ({ question }: { question: Question }) => {
   );
 };
 
-const KnowledgeSection = ({
-  theme,
-  foundEmojis,
-}: {
-  theme: Land;
-  foundEmojis: string[];
-}) => {
+const KnowledgeSection = ({ theme, foundEmojis }: { theme: Land; foundEmojis: string[] }) => {
   const [currentKnowledge, setCurrentKnowledge] = useState<Question[]>([]);
-  const questions: Question[] = questionBank.filter(
-    (question: Question) => question.theme === theme
-  );
-  const randomQuestion: Question =
-    questions[Math.floor(Math.random() * questions.length)];
 
   useEffect(() => {
     if (foundEmojis.length === 0) return;
+
+    const currentThemeQuestion = questionBank.filter(
+      (question: Question) => question.theme === theme && !currentKnowledge.includes(question)
+    );
+    const randomQuestion: Question =
+      currentThemeQuestion[Math.floor(Math.random() * currentThemeQuestion.length)];
     setCurrentKnowledge([...currentKnowledge, randomQuestion]);
   }, [foundEmojis]);
 
   return (
     <VStack align="stretch">
       {currentKnowledge.map((knowledge) => {
-        return <KnowledgeCard key={knowledge.id} question={knowledge} />;
+        return (
+          <KnowledgeCard
+            key={knowledge.id}
+            question={knowledge}
+          />
+        );
       })}
     </VStack>
   );

@@ -16,11 +16,17 @@ import {
 } from "@/utils/constants";
 
 export default function Game() {
-  const [gridType, setGridType] = useState<Land>("water");
+  const [gridType, setGridType] = useState<Land>("land");
   const [foundEmojis, setFoundEmojis] = useState<string[]>([]);
 
   return (
-    <HStack w="100%" spacing={0} align="stretch" h="100vh" bgColor="gray.200">
+    <HStack
+      w="100%"
+      spacing={0}
+      align="stretch"
+      h="100vh"
+      bgColor="gray.200"
+    >
       <LeftSidebar
         gridType={gridType}
         setGridType={setGridType}
@@ -33,7 +39,10 @@ export default function Game() {
           setFoundEmojis={setFoundEmojis}
         />
       </Center>
-      <RightSidebar gridType={gridType} foundEmojis={foundEmojis} />
+      <RightSidebar
+        gridType={gridType}
+        foundEmojis={foundEmojis}
+      />
     </HStack>
   );
 }

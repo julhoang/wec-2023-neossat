@@ -3,11 +3,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
 import BoardBlock from "./BoardBlock";
 import { BoardEmojis } from "@/utils/types";
-import {
-  targetLandEmojis,
-  targetMountainEmojis,
-  targetWaterEmojis,
-} from "@/utils/constants";
+import { targetLandEmojis, targetMountainEmojis, targetWaterEmojis } from "@/utils/constants";
 
 const GameBoard = ({
   gridType,
@@ -22,15 +18,23 @@ const GameBoard = ({
 
   useEffect(() => {
     document.onkeyup = (e) => {
-      console.log(e.key, playerPosition);
       if (e.key === "ArrowUp") {
-        setPlayerPosition((playerPosition) => playerPosition - 12);
+        if (playerPosition > 11) {
+          setPlayerPosition((playerPosition) => playerPosition - 12);
+        }
       } else if (e.key === "ArrowDown") {
-        setPlayerPosition((playerPosition) => playerPosition + 12);
+        if (playerPosition + 12 < 132) {
+          setPlayerPosition((playerPosition) => playerPosition + 12);
+        }
       } else if (e.key === "ArrowLeft") {
-        setPlayerPosition((playerPosition) => playerPosition - 1);
+        console.log(playerPosition);
+        if (playerPosition % 12 !== 0) {
+          setPlayerPosition((playerPosition) => playerPosition - 1);
+        }
       } else if (e.key === "ArrowRight") {
-        setPlayerPosition((playerPosition) => playerPosition + 1);
+        if (playerPosition % 12 !== 11) {
+          setPlayerPosition((playerPosition) => playerPosition + 1);
+        }
       }
     };
   }, []);
@@ -52,7 +56,10 @@ const GameBoard = ({
   }, [gridType]);
 
   return (
-    <Grid templateColumns="repeat(12, 70px)" templateRows="repeat(12, 70px)">
+    <Grid
+      templateColumns="repeat(12, 70px)"
+      templateRows="repeat(12, 70px)"
+    >
       {Array.from({ length: 144 }).map((_, i) => (
         <BoardBlock
           key={i}

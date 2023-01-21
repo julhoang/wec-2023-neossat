@@ -1,140 +1,88 @@
 import QuestionCard from "../components/QuestionCard";
-import { Head, Main } from "next/document";
 import { questionBank } from "../utils/questionBank";
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  StackDivider,
-} from "@chakra-ui/react";
+import { Box, Button, Heading } from "@chakra-ui/react";
 import { Question } from "@/utils/types";
 import { useEffect, useState } from "react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { HStack, VStack } from "@chakra-ui/react";
+import QuizQuestions from "@/components/QuizQuestions";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState<number[]>([]);
-  const [score, setScore] = useState(0);
-  const [wrongAnsID, setWrongAnsID] = useState();
-  const [showSubmit, setShowSubmit] = useState(false);
-
-  //create quiz
-  //get random 10 questions. if they were in localstorage, then get the other random ones
+  const [selectedOptions, setSelectedOptions] = useState<{
+    [key: number]: number;
+  }>({});
+  const [questionList, setQuestionList] = useState<Question[]>([]);
+  const [quizDone, setQuizDone] = useState(false);
 
   useEffect(() => {
-    createQuiz();
+    const obj = localStorage.getItem("explore-bc-questions");
+    let allQuestions: Question[] = [];
+
+    if (obj) {
+      const items = JSON.parse(obj) as Question[];
+      allQuestions = items;
+    } else {
+      allQuestions = questionBank;
+    }
+
+    const undoneQuestions = allQuestions.filter((item) => !item.done);
+    const selectedQuestions = undoneQuestions.slice(0, 10);
+
+    if (selectedQuestions.length < 10) {
+      const remainingQuestions = questionBank.filter(
+        (item) => !item.done && !undoneQuestions.includes(item)
+      );
+      const randomQuestions = remainingQuestions.sort(
+        () => 0.5 - Math.random()
+      );
+      const finalQuestions = randomQuestions.slice(
+        0,
+        10 - selectedQuestions.length
+      );
+      setQuestionList([...selectedQuestions, ...finalQuestions]);
+    } else {
+      setQuestionList(selectedQuestions);
+    }
+
+    // Update the questions in local storage
+    const correctQuestions = allQuestions.map((item) => {
+      if (questionList.includes(item)) {
+        item.done = true;
+      }
+      return item;
+    });
+
+    localStorage.setItem(
+      "explore-bc-questions",
+      JSON.stringify(correctQuestions)
+    );
   }, []);
 
-  function createQuiz() {
-    const obj = localStorage.getItem("q");
-    const questionList: Question[] = [];
- 
-    if (obj) {
-      const items = JSON.parse(obj);
+  const prevQuestion = () => setCurrentQuestion(currentQuestion - 1);
 
-      for (let i = 0; i < 10; i++) {
-        if (!questionList.includes(items[i])) {
-          questionList[i] = items[i];
-        }
-      }
+  const nextQuestion = () => setCurrentQuestion(currentQuestion + 1);
 
-      if (questionList.length == 0) {
-        for (let i = 0; i < 10; i++) {
-          questionList[i] = items[i];
-        }
-      }
-
-      if (questionList.length < 10) {
-        for (let i = 0; i < 10; i++) {
-          questionList[i] = items[i];
-        }
-      }
-    } else {
-      for (let i = 0; i < 10; i++) {
-        questionList[i] = questionBank[i];
-      }
-    }
-    console.log(questionList);
-
-    localStorage.setItem("q", JSON.stringify(questionList))
-
-    // questionList.map((ques) => {
-    //   localStorage.setItem("q", JSON.stringify({ id: ques.id, count: 0 }));
-    // });
-  }
-
-  function prevQuestion(currentQuestion: number) {
-    return setCurrentQuestion(currentQuestion - 1);
-  }
-
-  function nextQuestion(currentQuestion: number) {
-    return setCurrentQuestion(currentQuestion + 1);
-  }
-
-  function selectOption(answer: number, ques: number) {
-    const currentSelected: number[] = selectedOptions;
-    currentSelected[ques] = answer;
-    setSelectedOptions(currentSelected);
-  }
-
-  function submitQuiz() {
-    if (selectedOptions.length < 9) {
-      alert("Please answer all questions");
-    } else {
-      verifyAnswers();
-      console.log("submit quiz");
-    }
-  }
-
-  function verifyAnswers() {
-    questionBank.map((ques) => {});
-  }
+  const selectOption = (question: number, answer: number) => {
+    setSelectedOptions({ ...selectedOptions, [question]: answer });
+  };
 
   return (
-    <VStack spacing={10} w="50%" my={40}>
-      {currentQuestion < 10 && (
-        <>
-          <Box w="80%">
-            <QuestionCard
-              cardData={questionBank[currentQuestion]}
-              selectOption={selectOption}
-              currentQuestion={currentQuestion}
-            />
-          </Box>
-        </>
+    <VStack p={8} spacing={8}>
+      <Heading fontSize="5xl">ExploreBC Quiz</Heading>
+      {quizDone ? (
+        <Heading>Quiz Done</Heading>
+      ) : (
+        <Box w="80%">
+          <QuizQuestions
+            currentQuestion={currentQuestion}
+            selectedOptions={selectedOptions}
+            selectOption={selectOption}
+            nextQuestion={nextQuestion}
+            prevQuestion={prevQuestion}
+            questionList={questionList}
+          />
+        </Box>
       )}
-
-      <HStack spacing="4">
-        {currentQuestion > 0 && (
-          <Button
-            onClick={() => {
-              prevQuestion(currentQuestion);
-            }}
-          >
-            Previous
-          </Button>
-        )}
-
-        {currentQuestion < 9 ? (
-          <Button
-            onClick={() => {
-              nextQuestion(currentQuestion);
-            }}
-          >
-            Next
-          </Button>
-        ) : (
-          <Button
-            onClick={() => {
-              submitQuiz();
-            }}
-          >
-            Submit
-          </Button>
-        )}
-      </HStack>
     </VStack>
   );
 };

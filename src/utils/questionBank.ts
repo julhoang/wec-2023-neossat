@@ -33,7 +33,8 @@ export const questionBank: Question[] = [
   },
   {
     id: 2,
-    question: "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
+    question:
+      "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
     options: [
       { id: 1, text: "Grizzly Bear" },
       { id: 2, text: "Black Bear" },
@@ -43,11 +44,13 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
-    knowledge: "The Grizzly Bear is the most iconic mammal found in British Columbia.",
+    knowledge:
+      "The Grizzly Bear is the most iconic mammal found in British Columbia.",
   },
   {
     id: 3,
-    question: "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
+    question:
+      "What is the name of the oldest known Western Red Cedar tree in British Columbia?",
     options: [
       { id: 1, text: "Point Pelee" },
       { id: 2, text: "Yoho" },
@@ -61,8 +64,9 @@ export const questionBank: Question[] = [
       "Yoho National Park is a national park located in the Rocky Mountains of British Columbia, Canada.",
   },
   {
-    id: 5,
-    question: "Which birds in the list has the largest concentration in British Columbia?",
+    id: 4,
+    question:
+      "Which birds in the list has the largest concentration in British Columbia?",
     options: [
       { id: 1, text: "Bald Eagles" },
       { id: 2, text: "Grizzly Bears" },
@@ -72,11 +76,13 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
-    knowledge: "Bald Eagles are the largest concentration of animals in British Columbia.",
+    knowledge:
+      "Bald Eagles are the largest concentration of animals in British Columbia.",
   },
   {
     id: 5,
-    question: "What is the highest population of endangered Mountain Caribou found in Canada?",
+    question:
+      "What is the highest population of endangered Mountain Caribou found in Canada?",
     options: [
       { id: 1, text: "Grizzly Bear" },
       { id: 2, text: "Black Bear" },
@@ -86,11 +92,13 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "land",
     done: false,
-    knowledge: "Grizzly Bear is the largest population of animals in British Columbia.",
+    knowledge:
+      "Grizzly Bear is the largest population of animals in British Columbia.",
   },
   {
     id: 6,
-    question: "Which animal is home to the world’s largest concentration in British Columbia?",
+    question:
+      "Which animal is home to the world’s largest concentration in British Columbia?",
     options: [
       { id: 1, text: "Steller's Jay" },
       { id: 2, text: "Trumpeter Swan" },
@@ -104,7 +112,8 @@ export const questionBank: Question[] = [
   },
   {
     id: 7,
-    question: "Which animal is British Columbia home to the largest population of in Canada?",
+    question:
+      "Which animal is British Columbia home to the largest population of in Canada?",
     options: [
       { id: 1, text: "Under 5,000 km" },
       { id: 2, text: "5,000 - 12,000 km" },
@@ -118,8 +127,9 @@ export const questionBank: Question[] = [
   },
 
   {
-    id: 9,
-    question: "British Columbia is home to the world’s largest population of ...",
+    id: 8,
+    question:
+      "British Columbia is home to the world’s largest population of ...",
     options: [
       { id: 1, text: "wild Pacific salmon" },
       { id: 2, text: "Bull Trout" },
@@ -129,12 +139,13 @@ export const questionBank: Question[] = [
     correct: 1,
     theme: "water",
     done: false,
-    knowledge: "British Columbia is home to the world’s largest population of wild Pacific salmon.",
+    knowledge:
+      "British Columbia is home to the world’s largest population of wild Pacific salmon.",
   },
   {
-    id: 10,
+    id: 9,
     question:
-      "... is one of the most biologically productive habitats in the world, and is home to many endangered species.",
+      "_________ is one of the most biologically productive habitats in the world, and is home to many endangered species.",
     options: [
       { id: 1, text: "Robson Bight" },
       { id: 2, text: "Salish Sea" },
@@ -148,7 +159,7 @@ export const questionBank: Question[] = [
       "Georgia Strait is one of the most biologically productive habitats in the world, and is home to many endangered species.",
   },
   {
-    id: 9,
+    id: 10,
     question: "Which bird is the official bird of British Columbia?",
     options: [
       { id: 1, text: "King Peak" },
@@ -162,7 +173,7 @@ export const questionBank: Question[] = [
     knowledge: "Mount Logan is the highest mountain in British Columbia.",
   },
   {
-    id: 12,
+    id: 11,
     question: "Which mountain in BC has the highest peak",
     options: [
       { id: 1, text: "Fairweather Mountain" },
@@ -176,7 +187,7 @@ export const questionBank: Question[] = [
     knowledge: "Fairweather Mountain has the highest peak in BC.",
   },
   {
-    id: 13,
+    id: 12,
     question: "Which national park has the highest mountain peak in BC?",
     options: [
       { id: 1, text: "Mount Robson Provincial Park" },
@@ -187,10 +198,11 @@ export const questionBank: Question[] = [
     correct: 2,
     theme: "mountain",
     done: false,
-    knowledge: "Glacier Bay National Park and Preserve has the highest mountain peak in BC.",
+    knowledge:
+      "Glacier Bay National Park and Preserve has the highest mountain peak in BC.",
   },
   {
-    id: 14,
+    id: 13,
     question: "How many named mountain peaks are there in British Columbia?",
     options: [
       { id: 1, text: "5908" },
@@ -204,7 +216,7 @@ export const questionBank: Question[] = [
     knowledge: "There are 7996 named mountain peaks in British Columbia.",
   },
   {
-    id: 15,
+    id: 14,
     question: "How many species of marine life are there in British Columbia?",
     options: [
       { id: 1, text: "Less than 5000" },
@@ -215,6 +227,7 @@ export const questionBank: Question[] = [
     correct: 3,
     theme: "water",
     done: false,
-    knowledge: "There are over 7,500 species of marine life in British Columbia.",
+    knowledge:
+      "There are over 7,500 species of marine life in British Columbia.",
   },
 ];

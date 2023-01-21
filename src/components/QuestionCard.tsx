@@ -14,27 +14,38 @@ const QuestionCard = ({
   cardData,
   selectOption,
   currentQuestion,
+  selectedAnswer,
 }: {
-  cardData: Question;
-  selectOption: any;
+  cardData?: Question;
+  selectOption: (question: number, answer: number) => void;
   currentQuestion: number;
+  selectedAnswer: number;
 }) => {
   return (
     <Card direction={{ base: "column" }} variant="outline">
       <CardHeader>
-        {currentQuestion + 1}. {cardData.question}
+        <Heading fontSize="2xl">
+          {currentQuestion + 1}. {cardData?.question}
+        </Heading>
       </CardHeader>
       <CardBody>
         <Stack spacing="4">
-          {cardData.options.map((option: any) => {
+          {cardData?.options.map((option: any) => {
             return (
               <Button
                 key={option.id}
                 onClick={() => {
-                  selectOption(option.id, cardData.id);
+                  selectOption(cardData.id, option.id);
+                }}
+                isActive={selectedAnswer === option.id}
+                py={8}
+                _active={{
+                  bg: "blue.200",
                 }}
               >
-                {option.text}
+                <Heading fontSize="2xl" fontWeight="normal">
+                  {option.text}
+                </Heading>
               </Button>
             );
           })}

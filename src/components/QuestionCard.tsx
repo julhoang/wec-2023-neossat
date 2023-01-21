@@ -6,21 +6,39 @@ import {
   Card,
   CardBody,
   CardHeader,
+  Stack,
 } from "@chakra-ui/react";
 import { Question } from "../utils/types";
 
-const QuestionCard = ({cardData}: {cardData: Question}) => {
+const QuestionCard = ({
+  cardData,
+  selectOption,
+  currentQuestion,
+}: {
+  cardData: Question;
+  selectOption: any;
+  currentQuestion: number;
+}) => {
   return (
-    <Card
-      direction={{ base: "column", sm: "row" }}
-      overflow="hidden"
-      variant="outline"
-    >
-      <CardHeader>{cardData.question}</CardHeader>
+    <Card direction={{ base: "column" }} variant="outline">
+      <CardHeader>
+        {currentQuestion + 1}. {cardData.question}
+      </CardHeader>
       <CardBody>
-        {cardData.options.map((option) => {
-          return <div>{option.text}</div>;
-        })}
+        <Stack spacing="4">
+          {cardData.options.map((option: any) => {
+            return (
+              <Button
+                key={option.id}
+                onClick={() => {
+                  selectOption(option.id, cardData.id);
+                }}
+              >
+                {option.text}
+              </Button>
+            );
+          })}
+        </Stack>
       </CardBody>
     </Card>
   );

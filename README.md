@@ -1,6 +1,7 @@
 # ExploreBC
 
 A game for elementary students to learn about the nature of British Columbia.
+A spot-the-emoji game that gives students facts about the province and its natural features.
 
 # Run Locally
 

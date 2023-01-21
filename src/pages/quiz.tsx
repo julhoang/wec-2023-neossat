@@ -10,14 +10,60 @@ import {
   StackDivider,
 } from "@chakra-ui/react";
 import { Question } from "@/utils/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Stack, HStack, VStack } from "@chakra-ui/react";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState<number[]>([]);
   const [score, setScore] = useState(0);
+  const [wrongAnsID, setWrongAnsID] = useState();
   const [showSubmit, setShowSubmit] = useState(false);
+
+  //create quiz
+  //get random 10 questions. if they were in localstorage, then get the other random ones
+
+  useEffect(() => {
+    createQuiz();
+  }, []);
+
+  function createQuiz() {
+    const obj = localStorage.getItem("q");
+    const questionList: Question[] = [];
+ 
+    if (obj) {
+      const items = JSON.parse(obj);
+
+      for (let i = 0; i < 10; i++) {
+        if (!questionList.includes(items[i])) {
+          questionList[i] = items[i];
+        }
+      }
+
+      if (questionList.length == 0) {
+        for (let i = 0; i < 10; i++) {
+          questionList[i] = items[i];
+        }
+      }
+
+      if (questionList.length < 10) {
+        for (let i = 0; i < 10; i++) {
+          questionList[i] = items[i];
+        }
+      }
+    } else {
+      for (let i = 0; i < 10; i++) {
+        questionList[i] = questionBank[i];
+      }
+    }
+    console.log(questionList);
+
+    localStorage.setItem("q", JSON.stringify(questionList))
+
+    // questionList.map((ques) => {
+    //   localStorage.setItem("q", JSON.stringify({ id: ques.id, count: 0 }));
+    // });
+  }
 
   function prevQuestion(currentQuestion: number) {
     return setCurrentQuestion(currentQuestion - 1);
@@ -37,8 +83,13 @@ const Quiz = () => {
     if (selectedOptions.length < 9) {
       alert("Please answer all questions");
     } else {
+      verifyAnswers();
       console.log("submit quiz");
     }
+  }
+
+  function verifyAnswers() {
+    questionBank.map((ques) => {});
   }
 
   return (

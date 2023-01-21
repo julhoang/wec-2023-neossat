@@ -7,15 +7,31 @@ import { useState } from "react";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState<number[]>([]);
 
-  function updateQuestion(currentQuestion: number) {
+  const [showSubmit, setShowSubmit] = useState(false);
+
+  function prevQuestion(currentQuestion: number) {
+    return setCurrentQuestion(currentQuestion - 1);
+  }
+
+  function nextQuestion(currentQuestion: number) {
     return setCurrentQuestion(currentQuestion + 1);
+  }
+
+  function selectOption(answer: number, ques: number) {
+    const currentSelected: number[] = selectedOptions;
+    currentSelected[ques] = answer;
+    setSelectedOptions(currentSelected);
   }
 
   function submitQuiz() {
     setCurrentQuestion(0);
-    console.log("submit quiz");
+    if (selectedOptions.length < 9) {
+      alert("Please answer all questions");
+    } else {
+      console.log("submit quiz");
+    }
   }
 
   return (
@@ -30,28 +46,55 @@ const Quiz = () => {
             <CardHeader>{questionBank[currentQuestion].question}</CardHeader>
             <CardBody>
               {questionBank[currentQuestion].options.map((option) => {
-                return <>{option.text}</>;
+                return (
+                  <Button
+                    key={option.id}
+                    onClick={() => {
+                      selectOption(option.id, questionBank[currentQuestion].id);
+                      console.log(selectedOptions);
+                    }}
+                  >
+                    {option.text}
+                  </Button>
+                );
               })}
             </CardBody>
           </Card>
         </Box>
       )}
 
+      {currentQuestion > 0 && (
+        <>
+          <Button
+            onClick={() => {
+              prevQuestion(currentQuestion);
+            }}
+          >
+            Previous
+          </Button>
+        </>
+      )}
+
       {currentQuestion < 10 ? (
         <>
           <Button
             onClick={() => {
-              updateQuestion(currentQuestion);
+              nextQuestion(currentQuestion);
             }}
-          />
+          >
+            Next
+          </Button>
         </>
       ) : (
         <>
+          {/* {selectedOptions.length==9 && ()} */}
           <Button
             onClick={() => {
               submitQuiz();
             }}
-          />
+          >
+            Submit
+          </Button>
         </>
       )}
     </>

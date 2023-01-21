@@ -1,7 +1,6 @@
 import { Land } from "@/utils/types";
 import { Center, GridItem, Text } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
-import { BoardEmojis } from "@/utils/types";
 import { landEmojis, mountainEmojis, waterEmojis } from "@/utils/constants";
 import { useRouter } from "next/router";
 

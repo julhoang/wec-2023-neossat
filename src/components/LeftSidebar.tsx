@@ -4,7 +4,7 @@ import {
   targetWaterEmojis,
 } from "@/utils/constants";
 import { Land } from "@/utils/types";
-import { VStack, Heading, Progress, Button, Box, grid } from "@chakra-ui/react";
+import { VStack, Heading, Button } from "@chakra-ui/react";
 import Timer from "./Timer";
 
 const LeftSidebar = ({

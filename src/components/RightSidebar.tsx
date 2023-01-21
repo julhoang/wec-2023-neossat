@@ -1,4 +1,4 @@
-import { VStack, Heading, Progress, Button, Box } from "@chakra-ui/react";
+import { VStack, Heading } from "@chakra-ui/react";
 import KnowledgeSection from "./KnowledgeSection";
 import { Land } from "@/utils/types";
 

@@ -1,28 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
 import {
-  Box,
   Button,
-  ButtonGroup,
   Center,
-  Divider,
-  Grid,
-  GridItem,
   Heading,
-  HStack,
-  Progress,
   useDisclosure,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { Land } from "@/utils/types";
-import Header from "@/components/Header";
-import LeftSidebar from "@/components/LeftSidebar";
-import GameBoard from "@/components/GameBoard";
-import RightSidebar from "@/components/RightSidebar";
 import Link from "next/link";
 import {
   Modal,

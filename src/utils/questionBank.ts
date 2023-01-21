@@ -90,8 +90,7 @@ export const questionBank: Question[] = [
   },
   {
     id: 6,
-    question:
-      "Which animal is home to the world’s largest concentration in British Columbia coastal temperate rainforest?",
+    question: "Which animal is home to the world’s largest concentration in British Columbia?",
     options: [
       { id: 1, text: "Steller's Jay" },
       { id: 2, text: "Trumpeter Swan" },

@@ -22,3 +22,6 @@ A game for elementary students to learn about the nature of British Columbia, de
 It should be running on [http://localhost:3000](http://localhost:3000)
 
 ## Demo 
+
+
+https://user-images.githubusercontent.com/64108232/224867407-752556d6-6f4d-4467-81cb-8ced3282386f.mp4

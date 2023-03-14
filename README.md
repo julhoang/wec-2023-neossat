@@ -1,33 +1,24 @@
-# ExploreBC
+# 🏕️ ExploreBC
 
-A game for elementary students to learn about the nature of British Columbia.
-A spot-the-emoji game that gives students facts about the province and its natural features.
+A game for elementary students to learn about the nature of British Columbia, developed within 8 hours during the Western Engineering Competition 2023. In this game, students have 2 minutes to find all emojis that would unlock different facts about BC's nature. Once the game finishes, students can take a quiz to test their understanding.
 
-# Run Locally
 
-## Prerequisites
+## Developer Team
+- 🧑‍💻 [Eduardo Szeckir](https://github.com/szeckirjr) 
+- 🧑‍💻 [Nishchint Dhawan](https://github.com/NishchintDhawan)
+- 👩‍💻 [Julia Hoang](https://github.com/julhoang)
 
-- [Node.js](https://nodejs.org/en/)
-- [Next.js](https://nextjs.org/)
+## How to Run Locally
 
-## Installation
+- Prerequisites: [Node.js](https://nodejs.org/en/) and [Next.js](https://nextjs.org/)
 
-Install the dependencies
+### Installation
 
 ```bash
   npm install
-```
-
-Initialize the database
-
-```bash
   npm run init-db
-```
-
-Start the development server
-
-```bash
   npm run dev
 ```
-
 It should be running on [http://localhost:3000](http://localhost:3000)
+
+## Demo 
